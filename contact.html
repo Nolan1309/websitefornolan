@@ -142,13 +142,18 @@
                         </div>
                         <div class="contact__form">
                             <h5>Lời thương cho Children Fashion</h5>
-                            <form action="#">
-                                <input type="text" placeholder="Họ và tên">
-                                <input type="number" placeholder="Số điện thoại">
-                                <input type="number" placeholder="Email">
-                                <textarea placeholder="Nhập lời thương..."></textarea>
-                                <button type="submit" class="site-btn">GỬI</button>
+                            <script type="text/javascript">
+                                var submitted=false;
+                            </script>
+                            <iframe id="hidden_iframe" name="hidden_iframe" onload="if(submitted){alert('Bạn đã gửi thông tin thành công tới hệ thống!');}" style="display: none;"></iframe>
+                            <form onsubmit="submitted=true;" target="hidden_iframe"  method="GET" action="https://script.google.com/macros/s/AKfycbyQfm-Ye4bvVjmwIOIBne2P4qLA2pxh1P8yxqGEZtSkbJ0uAMIqlTVwjXZ_2S7MqF6k/exec" >
+                                <input type="text" placeholder="Họ và tên" name="name" >
+                                <input type="text" placeholder="Số điện thoại" name="phone" >
+                                <input type="email" placeholder="Email" name="email" >
+                                <textarea placeholder="Nhập lời thương..." name="contribute"></textarea>
+                                <button type="submit" class="site-btn" name="submit">GỬI</button>
                             </form>
+                            
                         </div>
                     </div>
                 </div>
@@ -301,6 +306,7 @@
 <!-- Search End -->
 
 <!-- Js Plugins -->
+
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.magnific-popup.min.js"></script>
